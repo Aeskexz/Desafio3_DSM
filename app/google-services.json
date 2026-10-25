@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "463204146037",
+    "firebase_url": "https://desf-3-dsm-default-rtdb.firebaseio.com",
+    "project_id": "desf-3-dsm",
+    "storage_bucket": "desf-3-dsm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463204146037:android:7ae5241fc97649548c513c",
+        "android_client_info": {
+          "package_name": "com.example.desf_3_dsm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0nvLvx_aeDrQl7PFpTG3ZSIk5zHH0zrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

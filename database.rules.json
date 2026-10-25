@@ -1,0 +1,35 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        "goals": {
+          "$year": {
+            ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() % 1 === 0 && newData.val() <= 2147483647"
+          }
+        },
+        "books": {
+          "$bookId": {
+            ".validate": "newData.hasChildren(['title', 'author', 'genre', 'totalPages', 'pagesRead', 'status', 'rating', 'finishedAt']) && ((newData.child('status').val() === 'Terminado' && newData.child('pagesRead').val() === newData.child('totalPages').val() && newData.child('rating').val() >= 1 && newData.child('rating').val() <= 5 && newData.child('finishedAt').val() > 0) || (newData.child('status').val() !== 'Terminado' && newData.child('rating').val() === 0 && newData.child('finishedAt').val() === 0)) && (newData.child('status').val() !== 'Por leer' || newData.child('pagesRead').val() === 0)",
+            "title": { ".validate": "newData.isString() && newData.val().length >= 2 && newData.val().length <= 60" },
+            "author": { ".validate": "newData.isString() && newData.val().length >= 2 && newData.val().length <= 60" },
+            "genre": { ".validate": "newData.val() === 'Novela' || newData.val() === 'Ciencia ficción' || newData.val() === 'Historia' || newData.val() === 'Desarrollo personal'" },
+            "status": { ".validate": "newData.val() === 'Por leer' || newData.val() === 'Leyendo' || newData.val() === 'Terminado'" },
+            "totalPages": { ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() % 1 === 0 && newData.val() <= 2147483647" },
+            "pagesRead": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= newData.parent().child('totalPages').val() && newData.val() % 1 === 0" },
+            "rating": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 5 && newData.val() % 1 === 0" },
+            "finishedAt": { ".validate": "newData.isNumber() && newData.val() >= 0" },
+            "pagesByYear": {
+              "$year": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() % 1 === 0" }
+            },
+            "$other": { ".validate": false }
+          }
+        },
+        "$other": { ".validate": false }
+      }
+    }
+  }
+}

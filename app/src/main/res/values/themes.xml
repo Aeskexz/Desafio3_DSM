@@ -1,0 +1,12 @@
+<resources>
+    <style name="Base.Theme.Desafio3_DSM" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">#45664D</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#75654C</item>
+        <item name="colorSurface">@color/surface_color</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/page_background</item>
+    </style>
+    <style name="Theme.Desafio3_DSM" parent="Base.Theme.Desafio3_DSM" />
+</resources>
